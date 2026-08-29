@@ -54,6 +54,137 @@ section{padding:14px 0} .box{background:linear-gradient(145deg,rgba(8,24,45,.92)
 footer{padding:28px 0;color:#8392a7;text-align:center;font-size:12px}
 @media(max-width:1100px){.links{display:none}.hero-grid{grid-template-columns:260px 1fr}.photo{width:250px;height:390px}.about-stats{grid-template-columns:1fr 1fr 1fr}.about{grid-column:1/-1}.grid6{grid-template-columns:repeat(3,1fr)}.grid4{grid-template-columns:repeat(2,1fr)}.lead{grid-template-columns:repeat(3,1fr)}.tech{grid-template-columns:repeat(4,1fr)}.contact{grid-template-columns:1fr 1fr}.contact>div{grid-column:1/-1}}
 @media(max-width:700px){.wrap{width:min(100% - 22px,1420px)}.navin{height:66px}.brand strong{font-size:17px}.brand small{font-size:11px}.dotnet{width:40px;height:40px}.hero-grid{grid-template-columns:1fr;gap:0;padding-top:15px}.photo-wrap{order:2;height:360px}.photo{height:350px;width:230px}.code{display:none}.hero h1{font-size:55px}.subtitle{font-size:17px}.desc{font-size:14px}.hero:after{font-size:240px;right:-25px;top:210px}.about-stats,.grid6,.grid4,.projects,.lead,.tech,.contact{grid-template-columns:1fr 1fr}.grid6 .card:last-child{grid-column:1/-1}.section-title{font-size:20px}.contact h2{font-size:25px}}
+
+/* ===== MOBILE RESPONSIVE FIX ===== */
+img, svg, video, canvas { max-width: 100%; height: auto; }
+html, body { width: 100%; max-width: 100%; overflow-x: hidden; }
+* { min-width: 0; }
+
+@media (max-width: 700px) {
+  .nav { position: sticky; top: 0; }
+  .navin {
+    height: auto;
+    min-height: 64px;
+    padding: 10px 0;
+    gap: 10px;
+  }
+  .brand { gap: 9px; flex: 1; }
+  .brand strong { font-size: 16px; line-height: 1.15; }
+  .brand small { font-size: 10px; white-space: nowrap; }
+  .dotnet { width: 38px; height: 38px; flex: 0 0 38px; }
+  .dotnet b { font-size: 12px; }
+  .cta {
+    padding: 9px 12px;
+    font-size: 11px;
+    white-space: nowrap;
+    flex: 0 0 auto;
+  }
+
+  .hero { min-height: auto; padding: 24px 0 8px; }
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+    min-height: auto !important;
+  }
+  .hero-grid > div:last-child { order: 1; }
+  .photo-wrap {
+    order: 2 !important;
+    width: 100%;
+    height: 320px !important;
+    align-self: auto !important;
+  }
+  .photo-glow { width: 250px; height: 250px; }
+  .photo {
+    width: min(72vw, 250px) !important;
+    height: 310px !important;
+    max-width: 100%;
+    object-fit: cover;
+  }
+  .hero:after {
+    font-size: 180px !important;
+    right: -28px !important;
+    top: 190px !important;
+    opacity: .65;
+  }
+  .pill { font-size: 10px; padding: 7px 10px; }
+  .hero h1 {
+    font-size: clamp(40px, 12vw, 56px) !important;
+    line-height: 1 !important;
+    letter-spacing: -2px !important;
+    overflow-wrap: anywhere;
+  }
+  .subtitle { font-size: 15px !important; line-height: 1.35; }
+  .desc { font-size: 14px !important; }
+  .actions { flex-direction: column; align-items: stretch; }
+  .actions .btn { width: 100%; text-align: center; }
+  .tags { gap: 7px; }
+  .tag { font-size: 11px; padding: 6px 10px; }
+
+  section { padding: 10px 0; }
+  .box, .block { border-radius: 15px; }
+  .block { padding: 14px !important; margin-top: 10px !important; }
+  .section-title { font-size: 21px !important; line-height: 1.25; }
+  .about-stats {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px !important;
+    padding: 10px !important;
+  }
+  .about { grid-column: 1 / -1 !important; padding: 12px !important; }
+  .stat { padding: 14px 8px !important; }
+  .stat b { font-size: 24px !important; }
+  .stat small { font-size: 11px; }
+
+  .grid6, .grid4, .projects, .lead, .tech, .contact {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+  .grid6 .card:last-child { grid-column: auto !important; }
+  .card { padding: 15px !important; }
+  .card h3 { font-size: 16px !important; }
+  .card p, .card li { font-size: 13px !important; }
+
+  .project {
+    min-height: 0 !important;
+    padding-bottom: 16px !important;
+  }
+  .mini-tags {
+    position: static !important;
+    margin-top: 14px;
+  }
+  .project .num { font-size: 18px !important; }
+
+  .lead .item { padding: 15px !important; }
+  .tech div { padding: 12px !important; }
+  .tech b { font-size: 22px !important; }
+
+  .contact { padding: 16px !important; }
+  .contact > div { grid-column: auto !important; }
+  .contact h2 { font-size: 27px !important; }
+  .contact a {
+    display: block;
+    width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  footer {
+    padding: 22px 12px !important;
+    line-height: 1.6;
+  }
+}
+
+@media (max-width: 420px) {
+  .wrap { width: calc(100% - 20px) !important; }
+  .brand small { display: none; }
+  .cta { padding: 8px 10px; font-size: 10px; }
+  .hero { padding-top: 18px; }
+  .photo-wrap { height: 290px !important; }
+  .photo { width: 210px !important; height: 280px !important; }
+  .about-stats { grid-template-columns: 1fr !important; }
+  .stat { padding: 14px !important; }
+  .section-title { font-size: 19px !important; }
+  .contact h2 { font-size: 24px !important; }
+}
+
 </style>
 </head>
 <body>
