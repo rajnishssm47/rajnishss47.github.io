@@ -1262,10 +1262,145 @@ body{
 }
 </style>
 
+
+<style id="force-7-years-on-photo">
+/* Force the 7+ Years badge to sit visibly ON TOP of the photo */
+.hero-image,
+.profile-image,
+.image-wrap,
+.photo-wrap{
+  overflow:visible!important;
+}
+
+/* Put all overlay cards above the actual image */
+.hero-image .hero-stat,
+.profile-image .hero-stat,
+.image-wrap .hero-stat,
+.photo-wrap .hero-stat,
+.hero-image .experience-card,
+.profile-image .experience-card,
+.image-wrap .experience-card,
+.photo-wrap .experience-card{
+  display:block!important;
+  visibility:visible!important;
+  opacity:1!important;
+  position:absolute!important;
+  z-index:9999!important;
+  isolation:isolate!important;
+}
+
+/* First badge = 7+ Years: place directly over the upper-left area of the photo */
+.hero-image .hero-stat:first-of-type,
+.profile-image .hero-stat:first-of-type,
+.image-wrap .hero-stat:first-of-type,
+.photo-wrap .hero-stat:first-of-type,
+.hero-image .experience-card:first-of-type,
+.profile-image .experience-card:first-of-type,
+.image-wrap .experience-card:first-of-type,
+.photo-wrap .experience-card:first-of-type{
+  left:18px!important;
+  top:28px!important;
+  right:auto!important;
+  bottom:auto!important;
+  transform:none!important;
+}
+
+/* Keep photo below overlays */
+.hero-image img,
+.profile-image img,
+.image-wrap img,
+.photo-wrap img{
+  z-index:1!important;
+}
+
+/* Any decorative pseudo layers must remain behind */
+.hero-image::before,.hero-image::after,
+.profile-image::before,.profile-image::after,
+.image-wrap::before,.image-wrap::after,
+.photo-wrap::before,.photo-wrap::after{
+  z-index:0!important;
+}
+
+/* The text/content inside the badge must also remain visible */
+.hero-stat *,
+.experience-card *,
+.stat-card *{
+  position:relative!important;
+  z-index:10000!important;
+  visibility:visible!important;
+}
+
+@media(max-width:900px){
+  .hero-image .hero-stat:first-of-type,
+  .profile-image .hero-stat:first-of-type,
+  .image-wrap .hero-stat:first-of-type,
+  .photo-wrap .hero-stat:first-of-type,
+  .hero-image .experience-card:first-of-type,
+  .profile-image .experience-card:first-of-type,
+  .image-wrap .experience-card:first-of-type,
+  .photo-wrap .experience-card:first-of-type{
+    left:14px!important;
+    top:18px!important;
+  }
+}
+</style>
+
+
+<style id="exact-profile-badge-fix">
+/* Exact fix for this portfolio markup: .profile > .float.f1 + img.photo */
+.profile{
+  position:relative!important;
+  overflow:visible!important;
+  isolation:isolate!important;
+}
+.profile .photo{
+  position:relative!important;
+  z-index:1!important;
+}
+.profile .float{
+  position:absolute!important;
+  display:block!important;
+  visibility:visible!important;
+  opacity:1!important;
+  z-index:100!important;
+}
+
+/* 7+ Years badge — intentionally placed ON TOP of the upper-left photo area */
+.profile .float.f1{
+  left:18px!important;
+  top:34px!important;
+  right:auto!important;
+  bottom:auto!important;
+  z-index:999!important;
+}
+
+/* Keep 10+ Years badge above the photo as well */
+.profile .float.f2{
+  z-index:999!important;
+}
+
+.profile .float.f1 b,
+.profile .float.f1 small,
+.profile .float.f2 b,
+.profile .float.f2 small{
+  position:relative!important;
+  z-index:1000!important;
+  opacity:1!important;
+  visibility:visible!important;
+}
+
+@media(max-width:700px){
+  .profile .float.f1{
+    left:12px!important;
+    top:20px!important;
+  }
+}
+</style>
+
 </head>
 <body>
 <nav><div class="wrap navin">
-<a class="brand" href="#"><div class="logo">.NET</div><div><b>Rajnish Singh</b><small>Technical Lead • Enterprise Solutions</small></div></a>
+<a class="brand" href="#"><div class="logo">.NET</div><div><b>Rajnish Singh</b><small>Technical Lead | .NET Developer</small></div></a>
 <div class="links"><a href="#about">About</a><a href="#expertise">Expertise</a><a href="#impact">Impact</a><a href="#contact">Contact</a></div>
 <a class="cta" href="#contact">Let's Connect →</a>
 </div></nav>
