@@ -1397,6 +1397,128 @@ body{
 }
 </style>
 
+
+<style id="responsive-name-and-no-select-fix">
+html,body{max-width:100%!important;overflow-x:hidden!important;}
+*,*::before,*::after{
+  -webkit-user-select:none!important;-moz-user-select:none!important;
+  -ms-user-select:none!important;user-select:none!important;
+  -webkit-tap-highlight-color:transparent!important;
+}
+input,textarea{
+  -webkit-user-select:text!important;-moz-user-select:text!important;
+  -ms-user-select:text!important;user-select:text!important;
+}
+.brand,.logo,.navbar-brand{flex-shrink:0!important;min-width:max-content!important;white-space:nowrap!important;}
+.brand-name,.logo-name,.navbar-brand strong,.brand h1,.logo h1{
+  white-space:nowrap!important;overflow:visible!important;
+}
+.nav-links{min-width:0!important;flex-wrap:wrap!important;justify-content:center!important;}
+.nav-links a{white-space:nowrap!important;}
+.nav-cta,.cta-button,.navbar .btn{flex-shrink:0!important;white-space:nowrap!important;}
+
+@media(max-width:1180px){
+  header,nav,.navbar{width:calc(100% - 32px)!important;min-height:96px!important;}
+  .nav-inner,.navbar-inner,header>div{gap:22px!important;min-width:0!important;}
+  .brand-name,.logo-name,.navbar-brand strong,.brand h1,.logo h1{font-size:clamp(20px,2.2vw,28px)!important;}
+  .nav-links{gap:20px!important;}
+}
+@media(max-width:900px){
+  header,nav,.navbar{
+    width:calc(100% - 24px)!important;height:auto!important;min-height:0!important;
+    padding:14px 18px!important;
+  }
+  .nav-inner,.navbar-inner,header>div{
+    display:flex!important;flex-wrap:wrap!important;justify-content:space-between!important;
+    align-items:center!important;gap:14px!important;
+  }
+  .nav-links{
+    order:3!important;width:100%!important;display:flex!important;justify-content:center!important;
+    flex-wrap:wrap!important;gap:16px!important;padding-top:4px!important;
+  }
+  .nav-cta,.cta-button,.navbar .btn{order:2!important;}
+  .brand,.logo,.navbar-brand{max-width:calc(100% - 180px)!important;}
+}
+@media(max-width:640px){
+  header,nav,.navbar{
+    width:calc(100% - 16px)!important;margin-left:auto!important;margin-right:auto!important;
+    padding:12px 14px!important;border-radius:0 0 18px 18px!important;
+  }
+  .nav-inner,.navbar-inner,header>div{gap:10px!important;}
+  .brand,.logo,.navbar-brand{max-width:calc(100% - 132px)!important;min-width:0!important;}
+  .brand-name,.logo-name,.navbar-brand strong,.brand h1,.logo h1{
+    font-size:clamp(17px,5vw,22px)!important;line-height:1.1!important;white-space:nowrap!important;
+  }
+  .brand-subtitle,.logo-subtitle,.navbar-brand small,.brand p,.logo p{
+    font-size:12px!important;line-height:1.25!important;white-space:normal!important;
+  }
+  .nav-cta,.cta-button,.navbar .btn{
+    font-size:13px!important;padding:12px 15px!important;max-width:128px!important;
+  }
+  .nav-links{gap:8px 14px!important;padding-top:8px!important;}
+  .nav-links a{font-size:14px!important;}
+  .hero,.hero-section,#home{
+    width:calc(100% - 16px)!important;padding-left:18px!important;padding-right:18px!important;
+  }
+  .hero h1,.hero-section h1,#home h1{
+    font-size:clamp(42px,14vw,72px)!important;line-height:.92!important;overflow-wrap:anywhere!important;
+  }
+}
+@media(max-width:400px){
+  .brand,.logo,.navbar-brand{max-width:calc(100% - 112px)!important;}
+  .brand-name,.logo-name,.navbar-brand strong,.brand h1,.logo h1{font-size:17px!important;}
+  .nav-cta,.cta-button,.navbar .btn{max-width:108px!important;padding:10px!important;font-size:12px!important;}
+  .nav-links{justify-content:space-around!important;}
+}
+</style>
+
+
+<style id="singh-heading-margin-fix">
+/* Fix: keep the full "Rajnish Singh" heading inside the hero */
+.hero,
+.hero-grid,
+.hero-grid > div:first-child{
+  overflow:visible!important;
+}
+
+.hero h1{
+  display:block!important;
+  margin:0 0 28px 0!important;
+  padding:0 0 14px 0!important;
+  line-height:1.08!important;
+  min-height:2.18em!important;
+}
+
+.hero h1 span{
+  display:inline-block!important;
+  padding:0 8px 8px 0!important;
+  line-height:1.08!important;
+}
+
+/* Give the heading a little more safe space on laptop/tablet */
+@media (max-width:1180px){
+  .hero h1{
+    margin-bottom:24px!important;
+    padding-bottom:16px!important;
+    line-height:1.1!important;
+  }
+}
+
+/* Mobile: prevent clipping while keeping the design compact */
+@media (max-width:640px){
+  .hero h1{
+    font-size:clamp(42px,13vw,68px)!important;
+    line-height:1.12!important;
+    min-height:0!important;
+    margin-bottom:22px!important;
+    padding-bottom:14px!important;
+  }
+  .hero h1 span{
+    padding-bottom:8px!important;
+  }
+}
+</style>
+
 </head>
 <body>
 <nav><div class="wrap navin">
