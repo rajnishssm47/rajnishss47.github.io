@@ -467,6 +467,583 @@ section{scroll-margin-top:90px}
 }
 </style>
 
+
+<style id="rajnish-brand-upgrade">
+.brand-name, .logo, .name, .hero-name{
+  letter-spacing:.4px;
+}
+.rajnish-signature{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  margin:0 0 12px;
+  padding:9px 14px;
+  border:1px solid rgba(34,211,238,.20);
+  border-radius:999px;
+  background:linear-gradient(135deg,rgba(34,211,238,.08),rgba(139,92,246,.08));
+  color:#dbeafe;
+  font-size:13px;
+  font-weight:700;
+  box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+.rajnish-signature .dot{
+  width:9px;height:9px;border-radius:50%;
+  background:linear-gradient(135deg,#22d3ee,#8b5cf6);
+  box-shadow:0 0 16px rgba(34,211,238,.55);
+}
+.rajnish-signature strong{
+  color:#fff;
+  font-size:14px;
+  letter-spacing:.7px;
+}
+.hero h1, h1 .name-highlight{
+  text-shadow:0 8px 30px rgba(34,211,238,.08);
+}
+</style>
+
+
+<style id="photo-layout-adjustment">
+/* ===== Tighter hero/photo layout: reduce empty space ===== */
+.hero, .hero-section, #home{
+  min-height:auto!important;
+  padding-top:56px!important;
+  padding-bottom:56px!important;
+}
+.hero-content, .hero-inner{
+  gap:28px!important;
+  align-items:center!important;
+}
+.hero-text{
+  max-width:680px!important;
+}
+.hero-image, .profile-image, .photo-wrap, .image-wrap{
+  margin:0 auto!important;
+}
+.hero-image img, .profile-image img, .photo-wrap img, .image-wrap img{
+  max-height:430px!important;
+  object-fit:cover!important;
+}
+.hero .container, .hero-section .container, #home .container{
+  padding-top:0!important;
+  padding-bottom:0!important;
+}
+
+/* Reduce oversized gaps around visual sections */
+section.panel{
+  margin-top:24px!important;
+  margin-bottom:24px!important;
+  padding-top:48px!important;
+  padding-bottom:48px!important;
+}
+@media(min-width:1000px){
+  .hero, .hero-section, #home{padding-top:48px!important;padding-bottom:48px!important}
+}
+@media(max-width:760px){
+  .hero, .hero-section, #home{padding-top:32px!important;padding-bottom:38px!important}
+  .hero-content, .hero-inner{gap:20px!important}
+  .hero-image img, .profile-image img, .photo-wrap img, .image-wrap img{max-height:340px!important}
+  section.panel{padding-top:32px!important;padding-bottom:32px!important}
+}
+</style>
+
+
+<style id="hero-code-visual-upgrade">
+/* ===== HERO VISUAL UPGRADE ===== */
+.hero, .hero-section, #home{
+  position:relative;
+  overflow:hidden;
+}
+
+/* Decorative code panels fill the empty background area */
+.hero::before, .hero-section::before, #home::before{
+  content:"";
+  position:absolute;
+  inset:80px 0 0 0;
+  pointer-events:none;
+  opacity:.32;
+  background:
+    linear-gradient(90deg, transparent 0 46%, rgba(99,102,241,.10) 46% 46.15%, transparent 46.15%),
+    repeating-linear-gradient(90deg, transparent 0 88px, rgba(255,255,255,.025) 89px 90px),
+    repeating-linear-gradient(0deg, transparent 0 44px, rgba(255,255,255,.018) 45px 46px);
+  mask-image:linear-gradient(to bottom,transparent 0%,#000 15%,#000 88%,transparent 100%);
+}
+
+/* Right-side glass code card */
+.hero::after, .hero-section::after, #home::after{
+  content:"using .NET 10;\A\Apublic class PaymentService\A{\A  async Task ProcessAsync()\A  {\A    await gateway.PayAsync();\A    return Success;\A  }\A}\A\ASELECT * FROM Payments\AWHERE Status = 'Completed';";
+  white-space:pre;
+  position:absolute;
+  right:6%;
+  top:130px;
+  width:390px;
+  padding:26px 28px;
+  border-radius:24px;
+  font:13px/1.85 Consolas, Monaco, monospace;
+  color:rgba(139,210,255,.42);
+  background:linear-gradient(145deg,rgba(20,30,60,.38),rgba(12,18,38,.12));
+  border:1px solid rgba(120,160,255,.12);
+  box-shadow:0 30px 90px rgba(0,0,0,.22);
+  transform:rotate(-4deg);
+  pointer-events:none;
+}
+
+/* Keep actual hero content above the background */
+.hero > *, .hero-section > *, #home > *{
+  position:relative;
+  z-index:2;
+}
+
+/* Make the central gap feel intentional and denser */
+.hero-content, .hero-inner{
+  position:relative;
+  gap:20px!important;
+}
+.hero-text{
+  max-width:760px!important;
+}
+.hero h1, .hero-section h1, #home h1{
+  max-width:650px;
+}
+.hero p, .hero-section p, #home p{
+  max-width:930px;
+}
+@media(min-width:1200px){
+  .hero-image, .profile-image, .photo-wrap, .image-wrap{
+    transform:translateX(-18px);
+  }
+}
+@media(max-width:1050px){
+  .hero::after, .hero-section::after, #home::after{
+    right:2%;
+    width:300px;
+    opacity:.16;
+  }
+}
+@media(max-width:760px){
+  .hero::after, .hero-section::after, #home::after{
+    display:none;
+  }
+}
+</style>
+
+
+<style id="remove-hero-top-gap">
+/* Remove extra blank space below the navbar */
+.hero,
+.hero-section,
+#home{
+  margin-top:0!important;
+  padding-top:28px!important;
+  min-height:0!important;
+}
+
+.hero-content,
+.hero-inner,
+.hero-grid{
+  margin-top:0!important;
+  padding-top:0!important;
+  min-height:0!important;
+  align-items:center!important;
+}
+
+/* Some versions use an inner wrapper with a fixed top offset */
+.hero .container,
+.hero-section .container,
+#home .container{
+  margin-top:0!important;
+  padding-top:0!important;
+}
+
+/* Keep only normal breathing space on mobile */
+@media(max-width:760px){
+  .hero,.hero-section,#home{padding-top:18px!important;}
+}
+</style>
+
+
+<style id="premium-developer-look">
+/* ===== PREMIUM DEVELOPER PORTFOLIO LOOK ===== */
+:root{
+  --accent:#7c6cff;
+  --accent2:#27c6f5;
+  --panel:rgba(17,26,48,.72);
+}
+body{
+  background:
+    radial-gradient(circle at 12% 8%,rgba(124,108,255,.14),transparent 24%),
+    radial-gradient(circle at 88% 18%,rgba(39,198,245,.10),transparent 25%),
+    #0b1120!important;
+}
+header, nav, .navbar{
+  backdrop-filter:blur(18px)!important;
+  -webkit-backdrop-filter:blur(18px)!important;
+  background:rgba(12,20,38,.78)!important;
+  border-bottom:1px solid rgba(255,255,255,.07)!important;
+}
+.logo, .brand, .navbar-brand{
+  transition:transform .25s ease!important;
+}
+.logo:hover,.brand:hover,.navbar-brand:hover{transform:translateY(-2px)!important}
+
+/* Hero */
+.hero,.hero-section,#home{
+  background:
+    linear-gradient(120deg,rgba(12,18,38,.98),rgba(16,25,48,.88))!important;
+}
+.hero::before,.hero-section::before,#home::before{
+  opacity:.55!important;
+}
+.hero h1,.hero-section h1,#home h1{
+  letter-spacing:-2.5px!important;
+  line-height:.92!important;
+}
+.hero h1 span,.hero-section h1 span,#home h1 span{
+  background:linear-gradient(90deg,#ffffff,#8adfff 48%,#9a8cff)!important;
+  -webkit-background-clip:text!important;
+  background-clip:text!important;
+  color:transparent!important;
+}
+.hero p,.hero-section p,#home p{
+  color:#aebbd0!important;
+  line-height:1.7!important;
+}
+
+/* Tech chips */
+.hero .tag,.hero .chip,.tech-tag,.skill-tag,.pill{
+  border:1px solid rgba(124,108,255,.25)!important;
+  background:linear-gradient(135deg,rgba(124,108,255,.13),rgba(39,198,245,.06))!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.05)!important;
+  transition:transform .2s ease,border-color .2s ease!important;
+}
+.hero .tag:hover,.hero .chip:hover,.tech-tag:hover,.skill-tag:hover,.pill:hover{
+  transform:translateY(-3px)!important;
+  border-color:rgba(39,198,245,.5)!important;
+}
+
+/* Profile image card */
+.hero-image,.profile-image,.photo-wrap,.image-wrap{
+  position:relative!important;
+}
+.hero-image::before,.profile-image::before,.photo-wrap::before,.image-wrap::before{
+  content:""!important;
+  position:absolute!important;
+  inset:-10px!important;
+  border-radius:28px!important;
+  background:linear-gradient(135deg,rgba(124,108,255,.65),rgba(39,198,245,.25),transparent 65%)!important;
+  filter:blur(16px)!important;
+  opacity:.55!important;
+  z-index:-1!important;
+}
+.hero-image img,.profile-image img,.photo-wrap img,.image-wrap img{
+  border:1px solid rgba(255,255,255,.15)!important;
+  box-shadow:0 30px 70px rgba(0,0,0,.42)!important;
+}
+
+/* Floating experience cards */
+.stat-card,.experience-card,.hero-stat{
+  background:linear-gradient(145deg,rgba(22,32,58,.92),rgba(13,20,39,.78))!important;
+  border:1px solid rgba(255,255,255,.09)!important;
+  box-shadow:0 18px 45px rgba(0,0,0,.25)!important;
+  backdrop-filter:blur(12px)!important;
+}
+
+/* Buttons */
+button,.btn,.button,a.btn,.cta-button{
+  transition:transform .22s ease,box-shadow .22s ease!important;
+}
+button:hover,.btn:hover,.button:hover,a.btn:hover,.cta-button:hover{
+  transform:translateY(-3px)!important;
+  box-shadow:0 14px 32px rgba(92,112,255,.30)!important;
+}
+
+/* Section cards */
+.card,.domain-card,.project-card,.skill-card,.impact-card{
+  border:1px solid rgba(255,255,255,.07)!important;
+  background:linear-gradient(145deg,rgba(20,30,55,.78),rgba(12,19,37,.82))!important;
+  box-shadow:0 16px 45px rgba(0,0,0,.18)!important;
+  transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease!important;
+}
+.card:hover,.domain-card:hover,.project-card:hover,.skill-card:hover,.impact-card:hover{
+  transform:translateY(-7px)!important;
+  border-color:rgba(124,108,255,.35)!important;
+  box-shadow:0 25px 60px rgba(0,0,0,.28)!important;
+}
+</style>
+
+
+<style id="dhasu-color-upgrade">
+/* ===== BOLD PREMIUM COLOR SYSTEM ===== */
+:root{
+  --electric:#5B8CFF;
+  --violet:#8B5CF6;
+  --cyan:#22D3EE;
+  --pink:#EC4899;
+  --ink:#080D1A;
+  --deep:#10182D;
+  --text:#F5F7FF;
+  --muted:#AAB6CF;
+}
+
+body{
+  background:
+    radial-gradient(circle at 8% 12%, rgba(91,140,255,.22), transparent 27%),
+    radial-gradient(circle at 88% 10%, rgba(139,92,246,.20), transparent 30%),
+    radial-gradient(circle at 58% 72%, rgba(34,211,238,.09), transparent 32%),
+    linear-gradient(135deg,#070B16 0%,#0C1430 48%,#080D1A 100%)!important;
+  color:var(--text)!important;
+}
+
+header,nav,.navbar{
+  background:linear-gradient(90deg,rgba(8,13,26,.94),rgba(15,23,47,.82),rgba(12,15,35,.94))!important;
+  border-bottom:1px solid rgba(139,92,246,.22)!important;
+}
+
+.hero,.hero-section,#home{
+  background:
+    radial-gradient(circle at 15% 45%,rgba(91,140,255,.13),transparent 32%),
+    radial-gradient(circle at 88% 38%,rgba(139,92,246,.16),transparent 30%),
+    linear-gradient(135deg,#0B1022 0%,#121B38 55%,#0A1020 100%)!important;
+}
+
+/* Make the name and major headings pop */
+.hero h1,.hero-section h1,#home h1,
+h2.section-title,h2{
+  background:linear-gradient(100deg,#FFFFFF 5%,#A5C7FF 42%,#78E8FF 65%,#B99AFF 92%)!important;
+  -webkit-background-clip:text!important;
+  background-clip:text!important;
+  color:transparent!important;
+}
+
+/* Accent lines and decorative elements */
+.hero::before,.hero-section::before,#home::before{
+  opacity:.75!important;
+}
+.hero::after,.hero-section::after,#home::after{
+  color:rgba(83,202,255,.52)!important;
+  border-color:rgba(91,140,255,.20)!important;
+  background:linear-gradient(145deg,rgba(18,31,65,.56),rgba(9,15,33,.18))!important;
+}
+
+/* Brand/logo */
+.logo,.brand,.navbar-brand{
+  color:#F7F9FF!important;
+}
+.logo-mark,.logo-icon,.brand-icon{
+  background:linear-gradient(135deg,var(--electric),var(--violet))!important;
+  box-shadow:0 10px 30px rgba(91,140,255,.30),0 0 28px rgba(139,92,246,.20)!important;
+}
+
+/* Buttons */
+button,.btn,.button,a.btn,.cta-button{
+  color:#fff!important;
+  background:linear-gradient(100deg,#4F7FFF 0%,#6B7CFF 48%,#9A5CF6 100%)!important;
+  border:1px solid rgba(170,195,255,.22)!important;
+  box-shadow:0 12px 30px rgba(79,127,255,.25),inset 0 1px 0 rgba(255,255,255,.18)!important;
+}
+button:hover,.btn:hover,.button:hover,a.btn:hover,.cta-button:hover{
+  box-shadow:0 18px 42px rgba(91,140,255,.32),0 0 28px rgba(139,92,246,.22)!important;
+}
+
+/* Tech chips */
+.hero .tag,.hero .chip,.tech-tag,.skill-tag,.pill{
+  color:#DDE9FF!important;
+  border-color:rgba(91,140,255,.28)!important;
+  background:linear-gradient(135deg,rgba(91,140,255,.16),rgba(139,92,246,.12),rgba(34,211,238,.06))!important;
+}
+.hero .tag:hover,.hero .chip:hover,.tech-tag:hover,.skill-tag:hover,.pill:hover{
+  border-color:rgba(34,211,238,.58)!important;
+  box-shadow:0 10px 25px rgba(34,211,238,.10)!important;
+}
+
+/* Cards */
+.card,.domain-card,.project-card,.skill-card,.impact-card,.stat-card,.experience-card,.hero-stat{
+  background:
+    linear-gradient(145deg,rgba(26,38,72,.88),rgba(10,17,35,.88))!important;
+  border-color:rgba(116,142,255,.16)!important;
+}
+.card:hover,.domain-card:hover,.project-card:hover,.skill-card:hover,.impact-card:hover{
+  border-color:rgba(91,140,255,.42)!important;
+  box-shadow:0 26px 70px rgba(0,0,0,.34),0 0 30px rgba(91,140,255,.08)!important;
+}
+
+/* Photo glow */
+.hero-image::before,.profile-image::before,.photo-wrap::before,.image-wrap::before{
+  background:linear-gradient(135deg,rgba(34,211,238,.58),rgba(91,140,255,.50),rgba(139,92,246,.58),transparent 70%)!important;
+  opacity:.68!important;
+}
+
+/* Body copy */
+.hero p,.hero-section p,#home p,p{
+  color:var(--muted)!important;
+}
+.nav-links a,.nav a{
+  color:#B9C4DA!important;
+}
+.nav-links a:hover,.nav a:hover{
+  color:#7DE8FF!important;
+}
+</style>
+
+
+<style id="site-wide-unified-layout">
+/* =========================================================
+   SITE-WIDE VISUAL SYSTEM
+   One consistent width, border, radius and spacing language
+   ========================================================= */
+:root{
+  --site-max: 1695px;
+  --site-gutter: 58px;
+  --ui-radius: 30px;
+  --card-radius: 22px;
+  --ui-border: rgba(126,154,255,.17);
+  --ui-border-strong: rgba(126,154,255,.28);
+  --ui-surface: rgba(12,20,40,.78);
+}
+
+/* Keep the whole site aligned to the same left/right edges */
+body{
+  overflow-x:hidden!important;
+}
+main, .main, .page-content{
+  width:100%!important;
+}
+section:not(.hero):not(.hero-section):not(#home),
+.section{
+  width:min(var(--site-max), calc(100% - (var(--site-gutter) * 2)))!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+  box-sizing:border-box!important;
+}
+
+/* Hero gets the same visual outer edges as the rest of the site */
+.hero, .hero-section, #home{
+  width:min(var(--site-max), calc(100% - (var(--site-gutter) * 2)))!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+  border-left:1px solid var(--ui-border)!important;
+  border-right:1px solid var(--ui-border)!important;
+  border-bottom:1px solid var(--ui-border)!important;
+  border-radius:0 0 var(--ui-radius) var(--ui-radius)!important;
+  box-sizing:border-box!important;
+}
+
+/* All major content panels share one border and one rounded language */
+section.panel,
+.section-card,
+.about-section,
+.expertise-section,
+.impact-section,
+.contact-section,
+#about,#expertise,#impact,#contact{
+  border:1px solid var(--ui-border)!important;
+  border-radius:var(--ui-radius)!important;
+  overflow:hidden!important;
+  box-sizing:border-box!important;
+}
+
+/* Standardize inner horizontal padding */
+section:not(.hero):not(.hero-section):not(#home),
+.section,
+.hero,.hero-section,#home{
+  padding-left:40px!important;
+  padding-right:40px!important;
+}
+
+/* Avoid huge visual gaps between sections */
+section:not(.hero):not(.hero-section):not(#home),
+.section{
+  margin-top:32px!important;
+  margin-bottom:32px!important;
+}
+
+/* Cards everywhere follow the same design */
+.card,.domain-card,.project-card,.skill-card,.impact-card,
+.stat-card,.experience-card,.hero-stat,.about-card,
+.tech-card,.solution-card,.contact-card{
+  border:1px solid var(--ui-border)!important;
+  border-radius:var(--card-radius)!important;
+  background:linear-gradient(145deg,rgba(25,38,73,.82),rgba(10,17,35,.86))!important;
+  box-sizing:border-box!important;
+}
+
+/* Remove mismatched square edges inside sections */
+.about-grid,.impact-grid,.expertise-grid,.projects-grid,.domain-grid,
+.skills-grid,.contact-grid,.hero-content,.hero-inner,.hero-grid{
+  box-sizing:border-box!important;
+}
+
+/* Navbar aligned with the portfolio content */
+header,nav,.navbar{
+  width:min(var(--site-max), calc(100% - (var(--site-gutter) * 2)))!important;
+  margin-left:auto!important;
+  margin-right:auto!important;
+  border-left:1px solid rgba(126,154,255,.10)!important;
+  border-right:1px solid rgba(126,154,255,.10)!important;
+  border-bottom:1px solid var(--ui-border)!important;
+  border-radius:0 0 18px 18px!important;
+  box-sizing:border-box!important;
+}
+
+/* Keep the About section visually connected to the hero */
+#about,.about-section{
+  margin-top:32px!important;
+}
+
+/* Responsive consistency */
+@media(max-width:900px){
+  :root{--site-gutter:20px;}
+  section:not(.hero):not(.hero-section):not(#home),
+  .section,.hero,.hero-section,#home{
+    padding-left:24px!important;
+    padding-right:24px!important;
+  }
+  section:not(.hero):not(.hero-section):not(#home),
+  .section{margin-top:20px!important;margin-bottom:20px!important;}
+}
+@media(max-width:560px){
+  :root{--site-gutter:10px;--ui-radius:22px;--card-radius:18px;}
+  section:not(.hero):not(.hero-section):not(#home),
+  .section,.hero,.hero-section,#home{
+    padding-left:16px!important;
+    padding-right:16px!important;
+  }
+  header,nav,.navbar{
+    width:calc(100% - 20px)!important;
+  }
+}
+</style>
+
+
+<style id="fix-navbar-hero-separation">
+/* Small premium breathing space between navbar and hero */
+header + .hero,
+header + .hero-section,
+header + #home,
+nav + .hero,
+nav + .hero-section,
+nav + #home,
+.navbar + .hero,
+.navbar + .hero-section,
+.navbar + #home{
+  margin-top:22px!important;
+}
+
+/* Fallback for layouts where the navbar is fixed/overlapping */
+.hero, .hero-section, #home{
+  position:relative!important;
+  top:auto!important;
+}
+
+/* Keep the gap compact on mobile */
+@media(max-width:900px){
+  header + .hero, header + .hero-section, header + #home,
+  nav + .hero, nav + .hero-section, nav + #home,
+  .navbar + .hero, .navbar + .hero-section, .navbar + #home{
+    margin-top:14px!important;
+  }
+}
+</style>
+
 </head>
 <body>
 <nav><div class="wrap navin">
@@ -479,7 +1056,7 @@ section{scroll-margin-top:90px}
 <section class="hero">
 <div class="hero-grid">
 <div>
-<div class="kicker"><span class="pulse"></span> AVAILABLE FOR TECHNICAL LEADERSHIP OPPORTUNITIES</div>
+<div class="kicker"><span class="pulse"></span> </div>
 <h1><span>Rajnish</span><br>Singh</h1>
 <div class="role">Technical Lead | .NET, Cloud, AI & Financial Technology Solutions</div>
 <p class="desc">Experienced Technical Lead specializing in .NET, Cloud, and enterprise technology solutions across Finance, Auto Loan, Payment Processing, Construction ERP, Gaming & Betting Systems, and OTT Platforms. Strong expertise in building scalable .NET applications, modernizing legacy financial systems, and developing secure, transaction-safe services. Hands-on experience integrating Retell AI conversational voice-driven agents for automated Welcome Calls, Call Attending, and Loan Collection workflows, along with architecting flexible Payment Processor integrations for Credit Card and ACH transactions.</p>
