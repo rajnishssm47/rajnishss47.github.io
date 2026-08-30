@@ -446,6 +446,27 @@ section{scroll-margin-top:90px}
 }
 </style>
 
+
+
+<style id="contact-page-link-style">
+#contact .contact-page-cta{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  margin-top:20px;padding:14px 24px;border-radius:14px;text-decoration:none;
+  color:#fff;font-weight:800;font-size:15px;letter-spacing:.2px;
+  background:linear-gradient(135deg,#6366f1,#0ea5e9);
+  border:1px solid rgba(255,255,255,.16);
+  box-shadow:0 14px 32px rgba(14,165,233,.22);
+  transition:transform .25s ease,box-shadow .25s ease;
+}
+#contact .contact-page-cta:hover{
+  transform:translateY(-3px);
+  box-shadow:0 20px 42px rgba(99,102,241,.32);
+}
+@media(max-width:760px){
+  #contact .contact-page-cta{width:100%;padding:15px 18px}
+}
+</style>
+
 </head>
 <body>
 <nav><div class="wrap navin">
@@ -577,7 +598,9 @@ section{scroll-margin-top:90px}
 <div class="card c4"><div class="number">06</div><h3>AutoPay</h3><p>Automated recurring payment workflows to support continuous subscription access.</p></div>
 </div>
 </section><section id="contact" class="panel pad contact">
-<div><div class="eyebrow">05 / Contact</div><h2>Let's Build Something <span>Amazing.</span></h2><p>Open to Technical Lead and senior .NET opportunities involving enterprise platforms, cloud modernization, AI automation and financial technology.</p></div>
+<div><div class="eyebrow">05 / Contact</div><h2>Let's Build Something <span>Amazing.</span></h2><p>Open to Technical Lead and senior .NET opportunities involving enterprise platforms, cloud modernization, AI automation and financial technology.</p>
+<a class="contact-page-cta" href="contact.html">✉ Send Me a Message</a>
+</div>
 <div class="contact-links">
 <a href="mailto:rajnishs47@gmail.com"><b>✉ Email</b><small>rajnishs47@gmail.com</small></a>
 <a href="https://www.linkedin.com/in/rajnish-singh-7a93755a/" target="_blank"><b>in LinkedIn</b><small>linkedin.com/in/rajnish-singh-7a93755a</small></a>
@@ -656,7 +679,6 @@ Strong hands-on experience delivering enterprise and business-critical solutions
 </div>
 </section>
 <footer>© 2026 Rajnish Singh • Technical Lead • .NET, Cloud, AI & Financial Technology Solutions</footer>
-
 <script id="premium-motion">
 document.addEventListener("DOMContentLoaded",()=>{
   const items=document.querySelectorAll(".card,.panel");
